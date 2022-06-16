@@ -76,3 +76,12 @@ create table snack
    primary key (sna_id)
 );
 
+create table usuario
+(
+   user_id               int ,
+   
+   email           varchar(50) not null,
+   users         varchar(50) not null,
+	password   varchar(50) not null,
+   primary key (user_id)
+);
