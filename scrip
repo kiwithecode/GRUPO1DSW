@@ -76,6 +76,9 @@ create table snack
    primary key (sna_id)
 );
 
+/*==============================================================*/
+/* Table: usuario                                                 */
+/*==============================================================*/
 create table usuario
 (
    user_id               int ,
