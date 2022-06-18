@@ -10,9 +10,9 @@
           <li><a href="../../GRUPO1DSW/views/bar.php" class="nav-link px-2 text-white">Bar</a></li>
           <li><a href="../../GRUPO1DSW/views/buzon.php" class="nav-link px-2 text-white">Buzón</a></li>
           <li><a href="../../GRUPO1DSW/views/campus.php" class="nav-link px-2 text-white">Campus</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Menú</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Preferencias</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Snack</a></li>
+          <li><a href="../../GRUPO1DSW/views/menu.php" class="nav-link px-2 text-white">Menú</a></li>
+          <li><a href="../../GRUPO1DSW/views/preferencias.php" class="nav-link px-2 text-white">Preferencias</a></li>
+          <li><a href="../../GRUPO1DSW/views/snack.php" class="nav-link px-2 text-white">Snack</a></li>
         </ul>
 
         <div class="text-end">
