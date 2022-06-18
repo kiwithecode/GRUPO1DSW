@@ -9,9 +9,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+<style>
+  body {
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
 <body>
     <?php require '../partials/header.php' ?>
-
+    <br><br>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
