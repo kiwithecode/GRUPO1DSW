@@ -34,18 +34,21 @@ if (isset($_SESSION['user_id'])) {
 <style>
   body{
     background-image: url("https://images.alphacoders.com/519/thumb-1920-519509.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   h1{
     font-family: 'Courgette', cursive;
-    text-shadow: 4px 4px white;
-    font-size: 60px;
+    color: white;
+    text-shadow: 4px 4px black;
+    font-size: 90px;
   }
 
 </style>
   
 <body>
   <?php require 'partials/header.php' ?>
-  
+  <br><br><br><br><br><br><br><br><br><br><br>
   <h1>
     Bienvenido al sistema de Bar - ESPEL
   </h1>
