@@ -1,6 +1,6 @@
 <?php
 
-/*require 'database.php';*/
+/*require 'https://espebargrupouno.herokuapp.com/login/signup.php';*/
 
 $message = '';
 
@@ -56,7 +56,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 <body>
 
-  <?php require 'https://espebargrupouno.herokuapp.com/login/signup.php' ?>
+  <?php require '../partials/header.php' ?>
 
   <?php if (!empty($message)) : ?>
     <p> <?= $message ?></p>
