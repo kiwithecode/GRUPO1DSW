@@ -56,12 +56,12 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
 <body>
 
-  <?php require '../partials/header.php' ?>
+  <?php require 'https://espebargrupouno.herokuapp.com/login/signup.php' ?>
 
   <?php if (!empty($message)) : ?>
     <p> <?= $message ?></p>
   <?php endif; ?>
-    <br><br><br><br>
+  <br><br><br><br>
   <h1>Crear cuenta nueva</h1>
 
   <form action="signup.php" method="POST">
