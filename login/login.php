@@ -69,7 +69,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <br><br><br><br><br><br><br>
   <h1>Iniciar Sesión</h1>
 
-  <form action="login.php" method="POST">
+  <form action="https://espebargrupouno.herokuapp.com/index.php" method="POST">
     <input name="email" type="text" placeholder="Ingrese su email">
     <input name="password" type="password" placeholder="Ingrese su contraseña">
     <input type="submit" value="Ingresar">
