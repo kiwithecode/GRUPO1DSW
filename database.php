@@ -8,7 +8,7 @@ $password = '17c15c4f3af1e0a8f3f9ea043c0110e32ebb5ee82480a00f1fa2514f78dfa0bf';
 ;
 
 try {
-  $conn = new PDO("psql :host=$$host; dbname=$database; $username,$password,$port");
+  $conn = new PDO("pgsql :host=$$host; dbname=$database; port=$port; $username,$password,");
 } catch (PDOException $e) {
   die('Connection Failed: ' . $e->getMessage());
 }
