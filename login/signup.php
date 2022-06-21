@@ -66,7 +66,7 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
   <form action="https://espebargrupouno.herokuapp.com/login/login.php" method="POST">
     <input name="email" type="text" placeholder="Ingresa tu email">
-    <input name="user" type="password" placeholder="Ingresa tu usuario">
+    <input name="user" type="text" placeholder="Ingresa tu usuario">
     <input name="password" type="password" placeholder="Ingresa tu contraseña">
     <input type="submit" value="Crear cuenta nueva">
   </form>
