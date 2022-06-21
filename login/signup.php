@@ -1,6 +1,6 @@
 <?php
 
-/*require 'https://espebargrupouno.herokuapp.com/login/signup.php';*/
+require 'database.php';
 
 $message = '';
 
