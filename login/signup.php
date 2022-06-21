@@ -1,12 +1,11 @@
 <?php
 
 require 'database.php';
-
-$message = '';
+  
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-  $pgsql = "INSERT INTO users (email: email ) VALUES (email :password)";
-  $stmt = $conn->prepare($sql);
+  $pgsql = "INSERT INTO users (email password) VALUES (:email, :password)";
+  $stmt = $conn->prepare($pgsql);
   $stmt->bindParam(':email', $_POST['email']);
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
   $stmt->bindParam(':password', $password);
@@ -66,9 +65,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <br><br><br><br>
   <h1>Crear cuenta nueva</h1>
 
-  <form action="https://espebargrupouno.herokuapp.com/login/signup.php" method="POST">
+  <form action="https://espebargrupouno.herokuapp.com/login/login.php" method="POST">
     <input name="email" type="text" placeholder="Ingresa tu email">
-    <input name="password" type="password" placeholder="Ingresa tu contraseña">
+   <input name="password" type="password" placeholder="Ingresa tu contraseña">
     <input type="submit" value="Crear cuenta nueva">
   </form>
 
