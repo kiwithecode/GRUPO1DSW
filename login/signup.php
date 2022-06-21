@@ -5,7 +5,7 @@ require 'database.php';
 $message = '';
 
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-  $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+  $pgsql = "INSERT INTO users (email: email ) VALUES (email :password)";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':email', $_POST['email']);
   $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -17,7 +17,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $message = 'Sorry there must have been an issue creating your account';
   }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -64,9 +66,8 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <br><br><br><br>
   <h1>Crear cuenta nueva</h1>
 
-  <form action="https://espebargrupouno.herokuapp.com/login/login.php" method="POST">
+  <form action="https://espebargrupouno.herokuapp.com/login/signup.php" method="POST">
     <input name="email" type="text" placeholder="Ingresa tu email">
-    <input name="user" type="text" placeholder="Ingresa tu usuario">
     <input name="password" type="password" placeholder="Ingresa tu contraseña">
     <input type="submit" value="Crear cuenta nueva">
   </form>
