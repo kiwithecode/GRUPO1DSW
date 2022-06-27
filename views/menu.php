@@ -1,3 +1,7 @@
+<?php
+    include_once '../include/database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +14,11 @@
 </head>
 
 <style>
-  body {
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    body {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <body>
@@ -50,13 +54,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                    $sql = "SELECT * FROM menu";
+                                    $result = mysqli_query($conn, $sql);
+                                    while ($mostrar = mysqli_fetch_array($result)) {
+                                ?>
                                     <tr>
-                                        <td>Bar central</td>
-                                        <td>Desayuno</td>
-                                        <td>Continental</td>
-                                        <td>4.82</td>
-                                        <td>20</td>
-                                        <td>Leche, café, huevo revuelto c:, pan</td>
+                                        <td>2</td>
+                                        <td><?php echo $mostrar['id'] ?></td>
+                                        <td><?php echo $mostrar['nombre'] ?></td>
+                                        <td><?php echo $mostrar['precio'] ?></td>
+                                        <td><?php echo $mostrar['disponibilidad'] ?></td>
+                                        <td><?php echo $mostrar['descripcion'] ?></td>
+                                    </tr>
+                                <?php
+                                    }
+                                ?>
                                 </tbody>
                             </table>
                         </div>

@@ -1,3 +1,7 @@
+<?php
+  include_once '../include/database.php'; 
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,11 +52,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Belisario Quevedo</td>
-                    <td>Bar central</td>
-                    <td>Bar pepito</td>
-                    <td>Abierto</td>
+                  <?php                                                 
+                  $sql = "SELECT * FROM bar";
+                  $result = mysqli_query($conn, $sql);
+                  while ($mostrar = mysqli_fetch_array($result)) {
+                  ?>
+                    <tr>
+                      <td><?php echo $mostrar['id'] ?></td>
+                      <td><?php echo $mostrar['id'] ?></td>
+                      <td><?php echo $mostrar['nombre'] ?></td>
+                      <td><?php echo $mostrar['estado'] ?></td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
                 </tbody>
               </table>
             </div>

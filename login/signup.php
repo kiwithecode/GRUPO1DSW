@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 /*require 'database.php';*/
 
@@ -17,6 +18,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   }
 }
 
+=======
+  include_once '../include/database.php';
+>>>>>>> c70fb6f110c586ff9cce149c39d9790f4e2ca9ac
 ?>
 
 <!DOCTYPE html>
@@ -65,9 +69,14 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <br><br><br><br>
   <h1>Crear cuenta nueva</h1>
 
-  <form action="https://espebargrupouno.herokuapp.com/login/login.php" method="POST">
+  <form action="https://barespel.herokuapp.com/login/login.php" method="POST">
     <input name="email" type="text" placeholder="Ingresa tu email">
+<<<<<<< HEAD
    <input name="password" type="password" placeholder="Ingresa tu contraseña">
+=======
+    <input name="user" type="text" placeholder="Ingresa tu usuario">
+    <input name="password" type="password" placeholder="Ingresa tu contraseña">
+>>>>>>> c70fb6f110c586ff9cce149c39d9790f4e2ca9ac
     <input type="submit" value="Crear cuenta nueva">
   </form>
 
