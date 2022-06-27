@@ -1,5 +1,5 @@
 <?php
-  include_once '../include/database.php';
+  require '../include/database.php';
 ?>
 
 <!DOCTYPE html>
