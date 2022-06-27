@@ -1,9 +1,10 @@
 <?php
-session_start();
+  /*include 'include/database.php';*/
+  session_start();
+  $usuario = $_SESSION['usuario'];
 
-require 'database.php';
 
-if (isset($_SESSION['user_id'])) {
+/*if (isset($_SESSION['user_id'])) {
   $records = $conn->prepare('SELECT id, email, password FROM users WHERE id = :id');
   $records->bindParam(':id', $_SESSION['user_id']);
   $records->execute();
@@ -14,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
   if (count($results) > 0) {
     $user = $results;
   }
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -47,10 +48,17 @@ if (isset($_SESSION['user_id'])) {
 </style>
   
 <body>
-  <?php require 'partials/header.php' ?>
-  <br><br><br><br><br><br><br><br><br><br><br>
-  <h1>
-    Bienvenido al sistema de Bar - ESPEL
-  </h1>
+  <?php 
+    if(!isset($usuario)){
+      header("location: https://barespel.herokuapp.com/login/login.php");
+    }else{
+      require 'partials/header.php';
+      echo "<br><br><br><br><br><br><br><br><br><br><br>
+      <h1>
+        Bienvenido al sistema de Bar - ESPEL <br> $usuario
+      </h1>";
+    }
+  
+  ?>
 </body>
 </html>
