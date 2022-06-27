@@ -1,3 +1,8 @@
+<?php
+    include_once '../include/database.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +15,11 @@
 </head>
 
 <style>
-  body {
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    body {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <body>
@@ -47,10 +52,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Belisario Quevedo</td>
-                                        <td>Guillermo Rodriguez Lara</td>
-                                        <td>Belisario Quevedo</td>
+                                    <?php
+                                    $sql = "SELECT * FROM campus";
+                                    $result = mysqli_query($conn, $sql);
+                                    while ($mostrar = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $mostrar['id'] ?></td>
+                                            <td><?php echo $mostrar['nombre'] ?></td>
+                                            <td><?php echo $mostrar['direccion'] ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

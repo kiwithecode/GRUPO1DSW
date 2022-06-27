@@ -1,28 +1,5 @@
 <?php
-
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-  header('https://espebargrupouno.herokuapp.com/login/login.php');
-}
-/*require 'database.php';*/
-
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
-  $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :email');
-  $records->bindParam(':email', $_POST['email']);
-  $records->execute();
-  $results = $records->fetch(PDO::FETCH_ASSOC);
-
-  $message = '';
-
-  if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
-    $_SESSION['user_id'] = $results['id'];
-    header("https://espebargrupouno.herokuapp.com/login/login.php");
-  } else {
-    $message = 'Sorry, those credentials do not match';
-  }
-}
-
+  include_once '../include/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -61,17 +38,17 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
 </style>
 
 <body>
-  <?php require '../partials/header.php' ?>
+  <?php /*require '../partials/header.php'*/ ?>
 
-  <?php if (!empty($message)) : ?>
+  <?php /*if (!empty($message)) : ?>
     <p> <?= $message ?></p>
-  <?php endif; ?>
+  <?php endif; */?>
   <br><br><br><br><br><br><br>
   <h1>Iniciar Sesión</h1>
 
-  <form action="https://espebargrupouno.herokuapp.com/index.php" method="POST">
-    <input name="email" type="text" placeholder="Ingrese su email">
-    <input name="password" type="password" placeholder="Ingrese su contraseña">
+  <form action="https://barespel.herokuapp.com/login/loguear.php" method="POST">
+    <input type="text" name="usuario" placeholder="Ingrese su usuario">
+    <input type="text" name="contrasenia" placeholder="Ingrese su contraseña">
     <input type="submit" value="Ingresar">
   </form>
 </body>

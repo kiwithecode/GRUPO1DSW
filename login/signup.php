@@ -1,22 +1,5 @@
 <?php
-
-require 'database.php';
-
-
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
-  $pgsql = "INSERT INTO users (email password) VALUES (:email, :password)";
-  $stmt = $conn->prepare($pgsql);
-  $stmt->bindParam(':email', $_POST['email']);
-  $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-  $stmt->bindParam(':password', $password);
-
-  if ($stmt->execute()) {
-    $message = 'Successfully created new user';
-  } else {
-    $message = 'Sorry there must have been an issue creating your account';
-  }
-}
-
+  include_once '../include/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -65,9 +48,14 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
   <br><br><br><br>
   <h1>Crear cuenta nueva</h1>
 
-  <form action="https://espebargrupouno.herokuapp.com/login/login.php" method="POST">
+  <form action="https://barespel.herokuapp.com/login/login.php" method="POST">
     <input name="email" type="text" placeholder="Ingresa tu email">
+<<<<<<< HEAD
    <input name="password" type="password" placeholder="Ingresa tu contraseña">
+=======
+    <input name="user" type="text" placeholder="Ingresa tu usuario">
+    <input name="password" type="password" placeholder="Ingresa tu contraseña">
+>>>>>>> c70fb6f110c586ff9cce149c39d9790f4e2ca9ac
     <input type="submit" value="Crear cuenta nueva">
   </form>
 

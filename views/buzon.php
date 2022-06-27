@@ -1,3 +1,7 @@
+<?php
+    include_once '../include/database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +14,11 @@
 </head>
 
 <style>
-  body {
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    body {
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/1015/628/1024/tomato-hamburger-patty-sandwich-wallpaper-preview.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <body>
@@ -48,11 +52,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Bar central</td>
-                                        <td>1</td>
-                                        <td>17/06/2022</td>
-                                        <td>Buenos días</td>
+                                    <?php
+                                    $sql = "SELECT * FROM buzon";
+                                    $result = mysqli_query($conn, $sql);
+                                    while ($mostrar = mysqli_fetch_array($result)) {
+                                    ?>
+                                        <tr>
+                                            <td>2</td>
+                                            <td><?php echo $mostrar['id'] ?></td>
+                                            <td><?php echo $mostrar['fecha'] ?></td>
+                                            <td><?php echo $mostrar['desccripcion'] ?></td>
+                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
                                 </tbody>
                             </table>
                         </div>

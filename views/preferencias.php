@@ -1,3 +1,7 @@
+<?php
+    include_once '../include/database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,11 +52,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                        $sql = "SELECT * FROM preferencias";
+                                        $result = mysqli_query($conn, $sql);
+                                        while ($mostrar = mysqli_fetch_array($result)) {
+                                    ?>
                                     <tr>
-                                        <td>Desayuno</td>
-                                        <td>4</td>
-                                        <td>27/06/2022</td>
-                                        <td>A Kevin le gusta comer salchipapa :3</td>
+                                        <td>1</td>
+                                        <td><?php echo $mostrar['id'] ?></td>
+                                        <td><?php echo $mostrar['fecha'] ?></td>
+                                        <td><?php echo $mostrar['observacion'] ?></td>
+                                    </tr>
+                                    <?php
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

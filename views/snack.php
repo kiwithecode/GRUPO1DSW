@@ -1,3 +1,7 @@
+<?php
+  include_once '../include/database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +53,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Bar central</td>
-                    <td>004</td>
-                    <td>De Todito</td>
-                    <td>0.60</td>
-                    <td>100</td>
+                  <?php
+                    $sql = "SELECT * FROM snack";
+                    $result = mysqli_query($conn, $sql);
+                    while ($mostrar = mysqli_fetch_array($result)) {
+                  ?>
+                    <tr>
+                      <td>3</td>
+                      <td><?php echo $mostrar['id'] ?></td>
+                      <td><?php echo $mostrar['nombre'] ?></td>
+                      <td><?php echo $mostrar['precio'] ?></td>
+                      <td><?php echo $mostrar['disponibilidad'] ?></td>
+                    </tr>
+                  <?php
+                    }
+                  ?>
                 </tbody>
               </table>
             </div>
